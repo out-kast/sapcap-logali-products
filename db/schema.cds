@@ -1,21 +1,21 @@
 namespace com.logali;
 
 entity Products {
-    key ID               : UUID;
+    key ID               : Integer;
         name             : String(100);
         Description      : String(500);
         ImageUrl         : String(500);
         ReleaseDate      : DateTime;
         DiscontinuedDate : DateTime;
         Price            : Decimal(16, 2);
-        Height           : Decimal(5, 2);
-        Width            : Decimal(5, 2);
-        Depth            : Decimal(5, 2);
+        Height           : Decimal(16, 2);
+        Width            : Decimal(16, 2);
+        Depth            : Decimal(16, 2);
         Quantity         : Decimal(16, 2);
 };
 
 entity Suppliers {
-    key ID         : UUID;
+    key ID         : Integer;
         name       : String(100);
         street     : String(100);
         City       : String(100);
@@ -29,12 +29,12 @@ entity Suppliers {
 };
 
 entity Category {
-    key ID   : UUID;
+    key ID   : Integer;
         name : String(100);
 };
 
 entity StockAvailability {
-    key ID          : UUID;
+    key ID          : Integer;
         Description : String(500);
 };
 
@@ -69,7 +69,7 @@ entity ProductReview {
 };
 
 entity SalesData {
-    key ID              : UUID;
+    key ID              : Integer;
         DeliveryDate    : DateTime;
         DeliveryStatus  : String(100);
         DeliveryAddress : String(500);
