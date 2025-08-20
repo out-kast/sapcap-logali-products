@@ -1,7 +1,17 @@
 namespace com.logali;
 
+
+type Address : {
+    Street     : String(100);
+    City       : String(100);
+    State      : String(2);
+    PostalCode : String(5);
+    Country    : String(3);
+
+}
+
 entity Products {
-    key ID               : Integer;
+    key ID               : UUID;
         name             : String(100);
         Description      : String(500);
         ImageUrl         : String(500);
@@ -11,25 +21,21 @@ entity Products {
         Height           : Decimal(16, 2);
         Width            : Decimal(16, 2);
         Depth            : Decimal(16, 2);
-        Quantity         : Decimal(16, 2);
+    Quantity         : Decimal(16, 2);
+    Supplier_ID      : UUID;
 };
 
 entity Suppliers {
-    key ID         : Integer;
-        name       : String(100);
-        street     : String(100);
-        City       : String(100);
-        State      : String(2);
-        PostalCode : String(5);
-        Country    : String(3);
-        email      : String(100);
-        phone      : String(15);
-        fax        : String(15);
-        website    : String(100);
+    key ID      : UUID;
+        Name    : String(100);
+        Address : Address;
+        Email   : String(100);
+        Phone   : String(15);
+        fax     : String(15);
 };
 
-entity Category {
-    key ID   : Integer;
+entity Categories {
+    key ID   : String(1);
         name : String(100);
 };
 
